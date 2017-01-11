@@ -22,6 +22,7 @@ Check `main.py` for tunable hyperparameter flags.
 ## TODO
 - [ ] Replace NCE loss with Adaptive Softmax.
 - [ ] Remove restricted training on fixed sized sentences (20, for now) and extend to account for all varied sentence lenghts.
+- [ ] Implement Weight Normalisation for faster convergence.
 - [ ] Train extensively on deeper models to match the results with the paper.
 
 
