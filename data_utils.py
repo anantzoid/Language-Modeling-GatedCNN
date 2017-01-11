@@ -1,23 +1,16 @@
 import numpy as np
-import tensorflow as tf
 import collections
-import math
 import os
-import time
 
 def read_words(conf):
     words = []
-    '''
-    with open(data_file, 'r') as f:
-        words.extend(('<s> '+_+' </s>').split() for _ in tf.compat.as_str(f.read()).split('.') if len(_) > 0)
-        words = words
-        words = [word for sent in words for word in sent]
-    '''
-    for file in os.listdir(conf.data_dir)[:1]:
+    for file in os.listdir(conf.data_dir):
         with open(os.path.join(conf.data_dir, file), 'r') as f:
             for line in f.readlines():
                 tokens = line.split()
-                if len(tokens) == 18:
+                # NOTE Currently, only sentences with a fixed size are chosen
+                # to account for fixed convolutional layer size.
+                if len(tokens) == conf.context_size-2:
                     words.extend((['<pad>']*(conf.filter_h/2)) + ['<s>'] + tokens + ['</s>'])
     return words
 

@@ -1,15 +1,9 @@
 import numpy as np
 import tensorflow as tf
-import collections
-import math
-import os
-import time
 
 class GatedCNN(object):
 
-
     def __init__(self, conf):
-        
         tf.reset_default_graph()
             
         self.X = tf.placeholder(shape=[conf.batch_size, conf.context_size-1], dtype=tf.int32, name="X")
@@ -56,7 +50,7 @@ class GatedCNN(object):
         mask_layer = np.ones((conf.batch_size, conf.context_size-1, conf.embedding_size))
         mask_layer[:,0:conf.filter_h/2,:] = 0
         embed *= mask_layer
-
+        
         embed_shape = embed.get_shape().as_list()
         embed = tf.reshape(embed, (embed_shape[0], embed_shape[1], embed_shape[2], 1))
         return embed
