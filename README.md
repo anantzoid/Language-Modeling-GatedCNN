@@ -1,9 +1,9 @@
 # Language Modeling with Gated Convolutional Networks
 
-This is a Tensorflow implementation of Facebook AI Research Lab's paper: [Language Modeling with Gated Convolutional Networks](https://arxiv.org/abs/1612.08083). This paper applies a convlutional approach to language modelling with a novel Gated-CNN model.
+This is a Tensorflow implementation of Facebook AI Research Lab's paper: [Language Modeling with Gated Convolutional Networks](https://arxiv.org/abs/1612.08083). This paper applies a convolutional approach to language modelling with a novel Gated-CNN model.
 
 ## Architecture
-![Architecture](assets/architecture.png)
+![Architecture](assets/architecture.png){:height="6px" width="6px"}
 
 ## Requirements
 - Download and extract the [Google 1 Billion Word dataset](http://www.statmt.org/lm-benchmark/1-billion-word-language-modeling-benchmark-r13output.tar.gz) in the `data` folder.
