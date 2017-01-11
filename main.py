@@ -58,7 +58,6 @@ def main(_):
                 print "Perplexity: %.2f"%perp
                 saver.save(sess, conf.ckpt_file)
    
-            saver.save(sess, conf.ckpt_file)
             summaries = sess.run(model.merged_summary_op, feed_dict={model.X:inputs, model.y:labels})
             summary_writer.add_summary(summaries, i)
             
