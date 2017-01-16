@@ -38,8 +38,8 @@ def main(_):
     
     batch_idx = 0
     with tf.Session() as sess:
-        sess.run(tf.initialize_all_variables())
-        summary_writer = tf.train.SummaryWriter(conf.summary_path, graph_def=sess.graph)
+        sess.run(tf.global_variables_initializer())
+        summary_writer = tf.summary.FileWriter(conf.summary_path, graph=sess.graph)
 
         if os.path.exists(conf.ckpt_file):
             saver.restore(sess, conf.ckpt_file)

@@ -8,7 +8,7 @@ This is a Tensorflow implementation of Facebook AI Research Lab's paper: [Langua
 ## Requirements
 - Download and extract the [Google 1 Billion Word dataset](http://www.statmt.org/lm-benchmark/1-billion-word-language-modeling-benchmark-r13output.tar.gz) in the `data` folder.
 
-- [TensorFlow](https://www.tensorflow.org/)
+- [TensorFlow 0.12.1](https://www.tensorflow.org/)
 
 ## Usage
 To train the model using the default hyperparameters:

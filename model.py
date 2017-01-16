@@ -62,6 +62,6 @@ class GatedCNN(object):
         return tf.add(tf.nn.conv2d(fan_in, W, strides=[1,1,1,1], padding='SAME'), b)
     
     def create_summaries(self):
-        tf.scalar_summary("loss", self.loss)
-        tf.scalar_summary("perplexity", self.perplexity)
-        self.merged_summary_op = tf.merge_all_summaries()
+        tf.summary.scalar("loss", self.loss)
+        tf.summary.scalar("perplexity", self.perplexity)
+        self.merged_summary_op = tf.summary.merge_all()
